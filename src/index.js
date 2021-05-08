@@ -1,49 +1,49 @@
-// Задание 1
+// // Задание 1
 
-// const delay = ms => {
-//     // Твой код
-//     return Promise.resolve(ms);
-// };
+const delay = ms => {
+    // Твой код
+    return Promise.resolve(ms);
+};
 
-// const logger = time => setTimeout(() => {
-//     console.log(`Resolved after ${ time }ms`)
-// }, time);
+const logger1 = time => setTimeout(() => {
+    console.log(`Resolved after ${ time }ms`)
+}, time);
 
-// // Вызовы функции для проверки
-// delay(2000).then(logger); // Resolved after 2000ms
-// delay(1000).then(logger); // Resolved after 1000ms
-// delay(1500).then(logger); // Resolved after 1500ms
+// Вызовы функции для проверки
+delay(2000).then(logger1); // Resolved after 2000ms
+delay(1000).then(logger1); // Resolved after 1000ms
+delay(1500).then(logger1); // Resolved after 1500ms
 
 // Задание 2
 
-// const users = [
-//     { name: 'Mango', active: true },
-//     { name: 'Poly', active: false },
-//     { name: 'Ajax', active: true },
-//     { name: 'Lux', active: false },
-// ];
+const users = [
+    { name: 'Mango', active: true },
+    { name: 'Poly', active: false },
+    { name: 'Ajax', active: true },
+    { name: 'Lux', active: false },
+];
 
-// const toggleUserState = (allUsers, userName) => {
-//     const updatedUsers = allUsers.map(user =>
-//         user.name === userName ? { ...user, active: !user.active } : user,
-//     );
-//     return Promise.resolve(updatedUsers)
+const toggleUserState = (allUsers, userName) => {
+    const updatedUsers = allUsers.map(user =>
+        user.name === userName ? { ...user, active: !user.active } : user,
+    );
+    return Promise.resolve(updatedUsers)
 
-// };
+};
 
-// const logger = updatedUsers => console.table(updatedUsers);
+const logger = updatedUsers => console.table(updatedUsers);
 
-// /*
-//  * Сейчас работает так
-//  */
-// // toggleUserState(users, 'Mango', logger);
-// // toggleUserState(users, 'Lux', logger);
+/*
+ * Сейчас работает так
+ */
+// toggleUserState(users, 'Mango', logger);
+// toggleUserState(users, 'Lux', logger);
 
-// /*
-//  * Должно работать так
-//  */
-// toggleUserState(users, 'Mango').then(logger);
-// toggleUserState(users, 'Lux').then(logger);
+/*
+ * Должно работать так
+ */
+toggleUserState(users, 'Mango').then(logger);
+toggleUserState(users, 'Lux').then(logger);
 
 // Задание 3
 
